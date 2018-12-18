@@ -18,14 +18,14 @@ In progress.
 
 Below are descriptions of all of the arguments for GAGrank:
 
-```-h, --help  show this help message and exit<br />
--c C        GAG class (required)<br />
--i I        Input GAGfinder results file (required)<br />
--r R        Reducing end derivatization (optional)<br />
--m M        Precursor m/z (optional, but must be in mzML file)<br />
--z Z        Precursor charge (optional, but must be in mzML file)<br />
--s S        Number of sulfate losses to consider (optional, default 0)<br />
--a A        Actual sequence, for testing purposes<br />
+```-h, --help  show this help message and exit
+-c C        GAG class (required)
+-i I        Input GAGfinder results file (required)
+-r R        Reducing end derivatization (optional)
+-m M        Precursor m/z (optional, but must be in mzML file)
+-z Z        Precursor charge (optional, but must be in mzML file)
+-s S        Number of sulfate losses to consider (optional, default 0)
+-a A        Actual sequence, for testing purposes
 ```
 
 # Example command

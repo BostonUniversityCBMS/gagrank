@@ -16,7 +16,9 @@ import sqlite3 as sq # for accessing the database
 import networkx as nx # for network analysis
 import numpy as np # for numeric arrays
 import scipy as sp # for handling degree matrices
-from scipy.stats import rankdata # for getting actual GAG ranking
+from   scipy.stats import rankdata # for getting actual GAG ranking
+
+print "Done!"
 
 ## arrays for info about GAG parts
 # initialize dictionaries for weights and formulae
@@ -1717,7 +1719,7 @@ def rank_gags(gf, gc, cn, rf, mz, z, sl, a=None, db_path='../lib/GAGfragDB.db'):
 	# Step 8: Get the different rankings for each sequence #
 	########################################################
 	
-	print "Calculating enrichment score for each GAG structure..."
+	print "Calculating enrichment score for each GAG structure...",
 	
 	bsc = rank_nodes(GAGs, gr, gsc, gdict)
 	
@@ -1749,8 +1751,6 @@ def main():
 	# Step 1: check user arguments #
 	################################
 	
-	print "Checking user arguments...",
-	
 	# initiate parser
 	parser = argparse.ArgumentParser(description='Find isotopic clusters in GAG tandem mass spectra.')
 	
@@ -1758,13 +1758,15 @@ def main():
 	parser.add_argument('-c', required=True, help='GAG class (required)')
 	parser.add_argument('-i', required=True, help='Input GAGfinder results file (required)')
 	parser.add_argument('-r', required=False, help='Reducing end derivatization (optional)')
-	parser.add_argument('-m', type=float, required=False, help='Precursor m/z (optional, but must be in mzML file)')
-	parser.add_argument('-z', type=int, required=False, help='Precursor charge (optional, but must be in mzML file)')
+	parser.add_argument('-m', type=float, required=True, help='Precursor m/z (required)')
+	parser.add_argument('-z', type=int, required=True, help='Precursor charge (required)')
 	parser.add_argument('-s', type=int, required=False, help='Number of sulfate losses to consider (optional, default 0)')
-	parser.add_argument('-a', required=False, help='Actual sequence, for testing purposes')
+	parser.add_argument('-a', required=False, help='Actual sequence, for testing purposes (optional)')
 	
 	# parse arguments
 	args = parser.parse_args()
+	
+	print "Checking user arguments...",
 	
 	# get arguments into proper variables
 	gClass = args.c

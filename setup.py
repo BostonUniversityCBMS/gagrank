@@ -4,16 +4,16 @@ except ImportError:
 	from distutils.core import setup
 
 config = {
-	'description': 'My Project',
-	'author': 'My Name',
+	'description': 'GAGrank',
+	'author': 'J.D. Hogan',
 	'url': 'URL to get it at.',
 	'download_url': 'Where to download it.',
-	'author_email': 'My email.',
+	'author_email': 'jdhogan@bu.edu',
 	'version': '0.1',
 	'install_requires': ['nose'],
-	'packages': ['NAME'],
+	'packages': ['gagrank'],
 	'scripts': [],
-	'name': 'projectname'
+	'name': 'gagrank'
 }
 
 setup(**config)
